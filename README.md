@@ -43,7 +43,14 @@ DST_PATH_t2 = [ 'D:\research\ntuRGB\mat_f\',num2str(i),'\train'];%using your own
 matlab demo.m
 matlab classfile.m
 ```
-# To train (using tensorflow)
+## Using python (from "*.mat" to "*.npy")
+In file [`mtop.py`](lstm_py/mtop.py)
+```python 
+trainpath='./CS/train/'#verify your train data files forder here ("*.mat" file)
+testpath='./CS/test/'#verify your test data files forder here ("*.mat" file)
+```
+# Using Tensorflow
+## To train 
 In file [`main.py`](lstm_py/main.py)
 ```python
 
@@ -56,7 +63,7 @@ model_path="model/"#verify your train model data folder
 python lstm_py/main.py
 ```
 * you will get your own model saved in the "model/"
-# To test (using tensorflow)
+## To test 
 In file [`evaluate.py`](lstm_py/evaluate.py)
 ```python
 
@@ -68,7 +75,8 @@ model_path="model/"#verify your train model data folder
 ```bash
 python lstm_py/evaluate.py
 ```
-# train and test using keras
+# Using keras
+## To train and test 
 In file [`main.py`](keras/main.py)
 ```python
 
