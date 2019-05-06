@@ -17,7 +17,7 @@ A Simple But High-accuracy LSTM for human Action Recognition
     * [`mtop.py`](lstm_py/mtop.py): transform the skeleton files form "*.mat" to "*.npy" for python files . Also, you may use it for seperate train and test set . 
     * [`model_lstm/`](lstm_py/model_lstm): well-trained model of lstm .
 * [`keras`](keras): the train and test python file using keras lib.
-    * [`main.py`](keras/main.py): an example for you to transform the dataset using the given functions .You shall verify the "train_file", and "tree_file"
+    * [`main.py`](keras/main.py): an example for you to transform the dataset using the given functions .You shall verify the "train_file", and "test_file"
 # Requirements
 * code only tested on linux system (ubuntu 16.04)
 * Python 3 (Anaconda 3.6.3 specifically) with numpy and matplotlib
@@ -27,6 +27,7 @@ A Simple But High-accuracy LSTM for human Action Recognition
 # model structure
 ![model](model_lstm.jpg)
 # To prepare using the given data by NTU RGB+D
+## Using matlab (from "*.skeleton" to "*.mat")
 In file [`demo.m`](matlab_m/demo.m)
 ```matlab
 fileFolder=['D:\research\ntuRGB\ske_f\',num2str(t),'\'];%using your own dataset path
@@ -42,7 +43,7 @@ DST_PATH_t2 = [ 'D:\research\ntuRGB\mat_f\',num2str(i),'\train'];%using your own
 matlab demo.m
 matlab classfile.m
 ```
-# To train
+# To train (using tensorflow)
 In file [`main.py`](lstm_py/main.py)
 ```python
 
@@ -55,7 +56,7 @@ model_path="model/"#verify your train model data folder
 python lstm_py/main.py
 ```
 * you will get your own model saved in the "model/"
-# To test 
+# To test (using tensorflow)
 In file [`evaluate.py`](lstm_py/evaluate.py)
 ```python
 
@@ -67,5 +68,15 @@ model_path="model/"#verify your train model data folder
 ```bash
 python lstm_py/evaluate.py
 ```
+# train and test using keras
+In file [`main.py`](keras/main.py)
+```python
 
-
+train_file='CV_20/train' #verify your train data files forder here 
+test_file='CV_20/test' #verify your train data files forder here 
+model_file="model/my-model.meta"#verify your train model data file
+model_path="model/"#verify your train model data folder
+```
+```bash
+python lstm_py/evaluate.py
+```
