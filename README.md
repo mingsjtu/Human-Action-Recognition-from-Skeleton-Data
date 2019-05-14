@@ -123,5 +123,5 @@ model_path="model/"#verify your train model data folder
 ```
 
 ```bash
-python keras/evaluate.py
+python keras/main.py
 ```
