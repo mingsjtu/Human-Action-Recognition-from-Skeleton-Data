@@ -37,7 +37,7 @@ A Simple But High-accuracy LSTM for human Action Recognition
     
     # model structure
     
-    [model](model_lstm.jpg)
+    ![model](model_lstm.jpg)
     
     # To prepare using the given data by NTU RGB+D
     
